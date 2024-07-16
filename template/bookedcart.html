@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="width: 100%; height: 85px; background-color: black; display: flex; justify-content: center; z-index: -1; " >
+
+</div>
+
+<h1>Booked event</h1>
+
+
+
+
+<div style="width: 100%; height: 100vh;" >
+
+{% if data %}
+
+<div style="width: 100%; height: 100vh;" >
+    {% for i in data %}
+
+<div class="container" style="height: 200px; background: rebeccapurple; border-radius: 10px;" >
+    <h1 style="color: white;" >hi, {{i.name}} you booked for {{i.event_type}} on {{ i.Event_date }}</h1>
+
+    <h3 style="color: white;" >our team will connect you within 24 hr</h3>
+</div>
+
+{% endfor %}
+</div>
+
+
+
+{% endif %}
+
+
+ {% if not data %}
+ <div style="width: 100%; height: 80vh; display: flex; justify-content: center; align-items: center; " >
+    <h2 style="display: flex; justify-content: center;" >you are not booked an event </h2>
+ </div> 
+ {% endif %}
+    
+
+</div>
+
+
+{% endblock %}

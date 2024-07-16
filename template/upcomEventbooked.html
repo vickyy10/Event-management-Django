@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="width: 100%; height: 85px; background-color: black; display: flex; justify-content: center; z-index: -1; " >
+</div>
+{% if data %}
+
+<div class="bg-image-1" style="width: 100%; height: fit-content; padding: 20px;" >
+
+{% for i in data %}
+
+
+    <div style=" display: flex; justify-content: space-between; padding: 10px; backdrop-filter: blur(30px); border-radius: 20px; margin-top: 40px; width: 100%; height: 300px; background-color: rgba(0, 0, 0, 0.61);" >
+        <div style="width: 300px; height: 100%; " >
+            <img style=" border-radius: 20px; width: 300px; height: 100%;" src={{i.event.image.url}} alt="">
+        </div>
+        <div style="width: 1050px; height: 100%; "  >
+            <h1 style="color: white; text-align: center;" >{{i.event.Event_name}}</h1>
+
+            <h3 style="color: white;" >You have booked an {{i.event.Event_name}} event on {{i.event.date}}  </h3>
+            <h3 style="color: white;" >purchased {{i.no_ticket}} tickets</h3>
+        </div>
+        <div style="width: 400px; height: 100%; display: flex; justify-content: center; align-items: center; " >
+            <a class="btn btn-white" href={% url 'deleteupevent' i.id %}> cancel </a>
+        </div>
+    </div>
+
+    
+    {% endfor %}
+</div>
+
+{% else %}
+
+<h1>no event booked</h1>
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,140 @@
+
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card {
+  width: 24rem;
+  height: 36rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 40px 40px rgba(0, 0, 0, 0.2);
+ 
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+    filter: blur(3px);
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset .3s .3s ease-out;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  p, a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+  }
+  
+  p {
+    inset: auto auto 80px 30px;
+  }
+  
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  &:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset .3s ease-out;
+  }
+  
+  &:hover p, &:hover a {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+
+       
+</style>
+
+<div style="width: 100%; height: 85px; background-color: black; display: flex; justify-content: center; z-index: -1; " >
+</div>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<div class="main " style="display: flex; justify-content: space-around; align-items: center; height: 100vh;" >
+
+  <div style="height: 100vh; width: 100%; background-color: rgba(0, 0, 0, 0.555); position: absolute;" >
+    <img style="position: absolute; height: 100vh; width: 100%; object-fit: cover; z-index: -1;" src={% static 'assets/images/backgrounds/cnsrt.jpg' %} alt="werfe">
+
+  </div>
+
+  <div style="height: 500px ;width: 500px;" class = "card">
+    <img src="https://edit.org/img/blog/fpp-1024-blank-neon-invitation-template-editable.webp" alt="">
+    <div class="card-content">
+      <h2>
+        UPCOMING EVENTS
+      </h2>
+      <p>
+        enjoy with our fabules events
+    </p>
+      <a href={% url 'upcomingevent' %}  class="button">
+        see more
+        <span class="material-symbols-outlined">
+          arrow_right_alt
+        </span>
+      </a>
+    </div>
+  </div>
+  <div style="height: 500px; width: 500px;"  class = "card bdy ">
+    <img src="https://t4.ftcdn.net/jpg/03/25/28/81/360_F_325288177_h15kfeGzTIm83lygFnv1IMSqIyMdlX0I.jpg" alt="">
+    <div class="card-content">
+      <h2>
+        RECENT EVENTS
+      </h2>
+      <a href={% url 'completedevent' %} class="button">
+        see more
+        <span class="material-symbols-outlined">
+          arrow_right_alt
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

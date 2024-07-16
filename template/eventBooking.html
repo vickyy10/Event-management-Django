@@ -1,0 +1,101 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+
+
+<!-- <div class="container">
+
+    <h1 style="display: flex; justify-content: center; background-color: rgb(88, 30, 30); color: white; border-radius: 10px; padding: 20px; ">Event Booking</h1>
+    <form  method="post">
+        {% csrf_token %}
+        
+        {{ form.as_p  }}
+        
+        <button style=" margin-bottom: 20px; width: 100px; height: 40px; float: right; background: rgb(0, 89, 255); font-weight: bold; color: white; border: 0px ; border-radius: 3px; " type="submit">next</button>
+        
+    </form>
+    
+</div> -->
+
+
+
+
+
+
+<div style="width: 100%; height: 85px; background-color: black; display: flex; justify-content: center; z-index: -1; " >
+
+</div>
+<div style="position: absolute; background-color: rgba(0, 0, 0, 0.555); " id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+      <div style="display: flex; justify-content: center;" class="carousel-item active">
+        <img style="z-index: -1;"  src={% static 'assets/images/backgrounds/ww.jpg' %} class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+
+<section   style="margin-top: 80px; margin-bottom: 90px;" id="registration" class="section registration">
+    <div class="container" style="background: rgba(255, 251, 251, 0.171); border-radius: 10px; backdrop-filter: blur(10px);">
+        <div  >
+            <h1 style="text-align: center; background-color: black; color: white; border-radius: 10PX; height: 60px; display: flex; justify-content: center; align-items: center; " >EVENT BOOKING</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                
+            </div>
+        </div>
+            
+        <form  method="post" >
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert"></div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        {{form.name}}
+                    </div>
+
+                    <div class="form-group">
+                       
+                        {{form.phonenumber}}
+                    </div>
+
+                    <div class="form-group">
+                       {{form.email}}
+                    </div>
+
+                    <div class="form-group">
+                        {{form.Event_date}}
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        {{form.Adress}}
+                    </div>
+
+                    <div class="form-group">
+                        {{form.state}}
+                    </div>
+
+                    <div class="form-group">
+                        {{form.event_type}}
+                    </div>
+
+                    <div class="form-group">
+                        {{form.pin}}
+                    </div>
+
+                    <div class="form-group">
+                        {{form.peoplestrength}}
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt20">
+                <button type="submit" style="margin-bottom: 20px;" class="btn btn-black" >Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

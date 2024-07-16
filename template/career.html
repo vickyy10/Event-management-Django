@@ -1,0 +1,62 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %}
+
+<div style="width: 100%; height: 85px; background-color: black; display: flex; justify-content: center; z-index: -1; " >
+
+</div>
+
+<div style="width: 100%;height: 300px;" >
+    <div style="display: inline-block; height: 60px; position: absolute; width: 200px; background-color: rgba(116, 51, 153, 0.808); display: flex; justify-content: center; align-items: end; color: white; margin-top: 240px; margin-left: 200px; " >
+        <h1>CAREER</h1>
+    </div>
+    <img style="height: 300px; width: 100%; object-fit: cover;" src={% static 'assets/images/backgrounds/eventbooking.webp' %} alt="">
+
+</div>
+<div style="display: flex; background: black;" >
+    <div style="background: rgba(116, 51, 153, 0.808); width: 1060px; height: 100vh; margin: 10px; border-radius: 10px; "> </div>
+
+    <div style="width: 500px;  background-color: rgba(31, 31, 31, 0.534); padding: 20px; border-radius: 10px; margin: 10px; backdrop-filter: blur(10px); box-shadow: 1px 1px 1px 1px black; " >
+        <h2 style="text-align: center; color: white;" >Apply online</h2>
+        <form action='' method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+    
+            <div>
+                <label style="color: white;" for="name">position</label>
+                {{form.position}}
+            </div>
+                
+            <div data-mdb-input-init class="form-outline">
+                <label style="color: white;"  for="name">Name</label>
+                {{form.name}}
+            </div>
+    
+            <div data-mdb-input-init class="form-outline">
+                <label style="color: white;"  for="name">Mobile</label>
+                {{form.Mobile}}
+            </div>
+    
+            <div data-mdb-input-init class="form-outline">
+                <label  style="color: white;" for="name">Email</label>
+                {{form.email}}
+            </div>
+    
+            <div style="margin-top: 5px;" data-mdb-input-init class="form-outline">
+                <label style="color: white;"  for="name">Upload resume</label>
+                {{form.resume}}
+            </div>
+    
+            <div style="margin-top: 5px;"  data-mdb-input-init class="form-outline">
+                <div><label style="color: white;"  for="name">comment</label></div>
+                {{form.comment}}
+            </div>
+                    
+        <button style="background: rgb(0, 140, 255); color: white; font-weight: bold;" class="btn " type="submit" >submit</button>
+        </form>
+    
+    </div>
+
+</div>
+
+
+{% endblock %}

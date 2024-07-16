@@ -1,0 +1,19 @@
+.facts-container {
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  white-space: nowrap; /* Ensure cards stay in a single line */
+
+}
+  .fact-card {
+    flex: 0 0 auto; /* Ensures each fact card is not flexible and has its own width */
+    width: 250px; /* Set a fixed width for each fact card */ 
+ 
+    margin-right: 20px; /* Optional: Adjust margin between cards */
+  }
+
+
+  
+/* upcomig evet card ..... */
+
+
