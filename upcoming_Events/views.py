@@ -65,7 +65,7 @@ def upcoming_Eventscheckout(request,id):
     price = int(tickets.no_ticket) * int(data.ticket_price)
 
     
-    host=request.get_host()
+    host="13.49.67.124/"
 
     paypal_checkout={
         'business': settings.PAYPAL_RECEIVER_EMAIL,
