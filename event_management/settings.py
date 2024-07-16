@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = "home.ClientDetails"
 
 #csrf 
-CSRF_TRUSTED_ORIGINS = ["http://13.49.67.124/"]
+CSRF_TRUSTED_ORIGINS = ["http://13.49.67.124"]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
